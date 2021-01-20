@@ -77,6 +77,42 @@ let animal = {cat: "small cat"}
 let newAnimal: typeof animal = {cat: "bigcat"};
 
 
+// keyof
+type KEYS = {
+  primary: string;
+  secondary: string;
+};
+let key: keyof KEYS;
+key = "primary";
+
+
+// typeof + keyof
+const SPORTS = {
+  soccer: "Soccer",
+  baseball: "Baseball",
+}
+
+let keySports: keyof typeof SPORTS;
+
+// enum 自動的に連番を生成
+enum OS {
+  Windows,
+  Mac,
+  Linux,
+}
+interface PC {
+  id: number;
+  OSType: OS;
+}
+const PC1: PC = {
+  id: 1,
+  OSType: OS.Mac,
+};
+const PC2: PC = {
+  id: 2,
+  OSType: OS.Windows,
+};
+
 
 
 function App() {
